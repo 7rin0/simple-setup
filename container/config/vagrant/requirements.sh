@@ -12,6 +12,6 @@ sudo chmod -R 777 $PROJECT_ROOT/app/logs
 sudo sed -i "s/'127.0.0.1'/'127.0.0.1', '192.168.55.55'/g" $PROJECT_ROOT/web/app_dev.php
 
 # Set params
-sudo cp -f /vagrant/app/symfony/3/config/symfony_3.conf /etc/apache2/sites-available/symfony_3.conf
+sudo cp -f /vagrant/config/symfony/symfony_3.conf /etc/apache2/sites-available/symfony_3.conf
 sudo a2ensite symfony_3
 sudo service apache2 restart -y
