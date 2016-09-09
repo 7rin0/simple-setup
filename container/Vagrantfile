@@ -52,5 +52,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # A script to init out machine's environment
-  # config.vm.provision :shell, path: 'vagrant/install.sh'
+  config.vm.provision :shell, path: 'vagrant/install.sh'
 end
