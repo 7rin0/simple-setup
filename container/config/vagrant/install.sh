@@ -47,3 +47,6 @@ sudo cat /vagrant/config/vagrant/hosts | sudo tee --append /etc/hosts
 
 # Restart services
 sudo /etc/init.d/apache2 restart -y
+
+# Setup Application requirements
+sh /vagrant/config/vagrant/requirements.sh
