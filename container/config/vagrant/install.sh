@@ -36,6 +36,17 @@ sudo apt-get install git -y
 sudo curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/bin/composer
 sudo composer config -g github-oauth.github.com f0502ecd3d7c8e7e47223616c177b869180a3e05
 
+# Install NodeJS packages
+# https://nodejs.org/en/download/package-manager/
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install nodejs -y
+sudo apt-get install -y build-essential
+
+# PHPUnit
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+sudo mv phpunit.phar /usr/local/bin/phpunit
+
 # Install cache accelerators and server services
 sudo apt-get install php5-memcache memcached php-pear -y
 sudo pecl install memcache
