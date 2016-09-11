@@ -48,6 +48,8 @@ wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distrib
 sudo dpkg -i elasticsearch-2.4.0.deb
 rm -rf elasticsearch-2.4.0.deb
 # [TEST] curl -X GET http://localhost:9200/
+cd /usr/share/elasticsearch
+sudo bin/plugin install mobz/elasticsearch-head
 
 # PHPUnit
 wget https://phar.phpunit.de/phpunit.phar
