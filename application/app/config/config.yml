@@ -91,6 +91,7 @@ fos_rest:
             json: true
 
 # Faker
+# https://github.com/willdurand/BazingaFakerBundle/blob/master/Resources/doc/index.md
 bazinga_faker:
     orm: doctrine
     entities:
