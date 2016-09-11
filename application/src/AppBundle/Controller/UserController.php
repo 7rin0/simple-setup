@@ -15,14 +15,39 @@ use AppBundle\Entity\User;
 class UserController extends FOSRestController
 {
   /**
-  * @Rest\Get("/user")
+  * @Rest\Get("/user/{id}")
   */
-  public function getAction()
+  public function getAction($id)
   {
-  $restresult = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
+    $restresult = "";
+    if ($id === "all") {
+      $restresult = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
+    } else {
+      $restresult = $this->getDoctrine()->getRepository('AppBundle:User')->find($id);
+    }
     if ($restresult === null) {
-      return new View("there are no users exist", Response::HTTP_NOT_FOUND);
-  }
+        return new View("there are no users exist", Response::HTTP_NOT_FOUND);
+    }
     return $restresult;
   }
+
+    /**
+    * @Rest\Post("/user/")
+    */
+    public function postAction(Request $request)
+    {
+      $newUser = new User;
+      $name = $request->get('name');
+      $role = $request->get('role');
+      if(empty($name) || empty($role))
+      {
+       return new View("NULL VALUES ARE NOT ALLOWED", Response::HTTP_NOT_ACCEPTABLE);
+      }
+      $newUser->setName($name);
+      $newUser->setRole($role);
+      $entityManager = $this->getDoctrine()->getManager();
+      $entityManager->persist($newUser);
+      $entityManager->flush();
+      return new View("User Added Successfully", Response::HTTP_OK);
+    }
 }
