@@ -89,3 +89,15 @@ fos_rest:
         view_response_listener: 'force'
         formats:
             json: true
+
+# Faker
+bazinga_faker:
+    orm: doctrine
+    entities:
+        AppBundle\Entity\User:
+            number: 5
+            custom_formatters:
+                name:   { method: word }
+                role:   { method: word }
+            # custom_formatters:
+            #     Isbn:   { method: lexify, parameters: [ '?????????????' ] }
