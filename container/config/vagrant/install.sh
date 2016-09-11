@@ -15,6 +15,7 @@ sudo apt-get install php7.0 php7.0-cli php7.0-fpm php7.0-gd php7.0-json php7.0-m
 sudo apt-get -f install -y
 sudo apt-get update -y
 sudo apt-get upgrade -y
+sudo apt-get install -y build-essential
 
 # Install Apache
 sudo apt-get install apache2 apache2-doc apache2-utils -y
@@ -40,7 +41,13 @@ sudo composer config -g github-oauth.github.com f0502ecd3d7c8e7e47223616c177b869
 # https://nodejs.org/en/download/package-manager/
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install nodejs -y
-sudo apt-get install -y build-essential
+
+# Install Elasticsearch
+sudo apt-get install openjdk-7-jre -y
+wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.0/elasticsearch-2.4.0.deb
+sudo dpkg -i elasticsearch-2.4.0.deb
+rm -rf elasticsearch-2.4.0.deb
+# [TEST] curl -X GET http://localhost:9200/
 
 # PHPUnit
 wget https://phar.phpunit.de/phpunit.phar
