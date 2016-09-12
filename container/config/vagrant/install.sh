@@ -48,10 +48,11 @@ sudo composer config -g github-oauth.github.com f0502ecd3d7c8e7e47223616c177b869
 sudo npm install -g bower
 
 # Install Elasticsearch
+# FOSELastica doesnt support Elasticsearch > 2
 sudo apt-get install openjdk-7-jre -y
-wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.0/elasticsearch-2.4.0.deb
-sudo dpkg -i elasticsearch-2.4.0.deb
-rm -rf elasticsearch-2.4.0.deb
+wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.deb
+sudo dpkg -i elasticsearch-1.7.3.deb
+rm -rf elasticsearch-1.7.3.deb
 # [TEST] curl -X GET http://localhost:9200/
 cd /usr/share/elasticsearch
 sudo bin/plugin install mobz/elasticsearch-head
