@@ -34,13 +34,17 @@ sudo service apache2 restart -y
 # Prepare Environment
 sudo apt-get install zip -y
 sudo apt-get install git -y
-sudo curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/bin/composer
-sudo composer config -g github-oauth.github.com f0502ecd3d7c8e7e47223616c177b869180a3e05
 
 # Install NodeJS packages
 # https://nodejs.org/en/download/package-manager/
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install nodejs -y
+
+# PHP dependencies manager
+sudo curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/bin/composer
+sudo composer config -g github-oauth.github.com f0502ecd3d7c8e7e47223616c177b869180a3e05
+# Front dependencies manager
+sudo npm install -g bower
 
 # Install Elasticsearch
 sudo apt-get install openjdk-7-jre -y
