@@ -100,5 +100,11 @@ bazinga_faker:
             custom_formatters:
                 name:   { method: word }
                 role:   { method: word }
-            # custom_formatters:
-            #     Isbn:   { method: lexify, parameters: [ '?????????????' ] }
+
+# Elasticsearch
+# https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/Resources/doc/setup.md
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        app: ~
