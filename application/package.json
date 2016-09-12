@@ -1,0 +1,21 @@
+{
+  "name": "simple-setup",
+  "version": "0.0.1",
+  "description": "Simple setup",
+  "author": "Luis SEVERINO",
+  "license": "MIT",
+  "scripts": {},
+  "files": {},
+  "private": true,
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-nodeunit": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "http-server": "*"
+  }
+}
