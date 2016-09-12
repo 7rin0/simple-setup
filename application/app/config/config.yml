@@ -103,8 +103,19 @@ bazinga_faker:
 
 # Elasticsearch
 # https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/Resources/doc/setup.md
+# http://olegpuzanov.com/2014/11/02/using-elasticsearch-in-symfony2-project/
 fos_elastica:
     clients:
         default: { host: localhost, port: 9200 }
     indexes:
-        app: ~
+        app:
+            client: default
+            types:
+                user:
+                    mappings:
+                        name: ~
+                        role: ~
+                    persistence:
+                        driver: orm
+                        model: AppBundle\Entity\User
+                        provider: ~
