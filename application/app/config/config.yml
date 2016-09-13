@@ -99,7 +99,7 @@ bazinga_faker:
     orm: doctrine
     entities:
         AppBundle\Entity\User:
-            number: 5
+            number: 150
             custom_formatters:
                 name:   { method: word }
                 role:   { method: word }
