@@ -4,12 +4,11 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 class SearchController extends Controller
 {
     /**
-     * @Route("/search/{key}", name="search")
+     * @Route("/api/elastic/search/{key}", name="search")
      */
     public function searchAction($key)
     {
