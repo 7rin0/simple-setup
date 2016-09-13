@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}" />
+    <script type="text/javascript" src="{{ asset('assets/vendor/angular/angular.min.js') }}"></script>
+  </head>
+  <body>
+    <h1>Angular</h1>
+    <div ng-app="">
+      <p>Input something in the input box:</p>
+      <p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+      <h1>Hello {{'{{name}}'}}</h1>
+    </div>
+  </body>
+</html>

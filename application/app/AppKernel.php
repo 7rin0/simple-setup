@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new FOS\ElasticaBundle\FOSElasticaBundle(),
             new Bazinga\Bundle\FakerBundle\BazingaFakerBundle(),
             new AppBundle\AppBundle(),
+            new FrontendBundle\FrontendBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
