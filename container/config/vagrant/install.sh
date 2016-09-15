@@ -32,7 +32,7 @@ sudo sed -i -e '1 i\ ServerName localhost ' /etc/apache2/apache2.conf
 sudo a2enmod rewrite
 sudo service apache2 restart -y
 
-# Prepare Environment
+# Install server requirements
 sudo apt-get install zip -y
 sudo apt-get install git -y
 
@@ -46,6 +46,7 @@ sudo curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /
 sudo composer config -g github-oauth.github.com f0502ecd3d7c8e7e47223616c177b869180a3e05
 # Front dependencies manager
 sudo npm install -g bower
+sudo gem install sass
 
 # Install Elasticsearch
 # FOSELastica doesnt support Elasticsearch > 2
