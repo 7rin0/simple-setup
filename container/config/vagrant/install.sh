@@ -11,6 +11,7 @@ sudo apt-get update && apt-get install -y language-pack-en-base && export LC_ALL
 sudo apt-get install php7.0 -y
 sudo apt-get install php7.0 php7.0-cli php7.0-fpm php7.0-gd php7.0-json php7.0-mysql php7.0-readline -y
 sudo apt-get install php7.0-curl -y
+sudo apt-get install php7.0-mbstring
 
 # Update packages
 sudo apt-get -f install -y
