@@ -58,7 +58,9 @@ rm -rf elasticsearch-1.7.3.deb
 cd /usr/share/elasticsearch
 sudo bin/plugin install mobz/elasticsearch-head
 
+# OPTIONAL
 # installs add-apt-repository
+# http://hhvm.com/blog/3095/getting-wordpress-running-on-hhvm
 sudo apt-get install software-properties-common
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e7281be7a449
 sudo add-apt-repository "deb http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"
