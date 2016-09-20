@@ -1,3 +1,4 @@
 192.168.55.55 wordpress-4.vm
 192.168.55.55 drupal-7.vm drupal-8.vm
 192.168.55.55 symfony-2.vm symfony-3.vm
+192.168.55.55 phalcon-3.vm

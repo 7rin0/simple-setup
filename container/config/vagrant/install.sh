@@ -87,3 +87,9 @@ sudo /etc/init.d/apache2 restart -y
 
 # Setup Application requirements
 sh /vagrant/config/vagrant/requirements.sh
+
+# Add phalconphp
+# https://docs.phalconphp.com/en/latest/reference/install.html
+curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
+sudo apt-get install php7.0-phalcon
+php -m | grep 'phalcon'
