@@ -22,6 +22,7 @@ class IndexController extends Controller
      */
     public function debugAction()
     {
+      // https://github.com/raveren/kint
       // Simple test, to be removed soon ...
       Kint::dump($GLOBALS, $_SERVER);
     }
