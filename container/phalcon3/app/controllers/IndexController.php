@@ -9,6 +9,6 @@ class IndexController extends Controller
       $twigLoader = new Twig_Loader_Filesystem(__DIR__ . '/../views');
       $twig = new Twig_Environment($twigLoader);
       $template = $twig->loadTemplate('index.html.twig');
-      echo $template->render(array());
+      echo $template->render(array('hello_world'=>'Hello world! Twig variable.'));
     }
 }
