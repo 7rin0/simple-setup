@@ -6,8 +6,7 @@ class IndexController extends Controller
 {
     public function indexAction()
     {
-      $twigLoader = new Twig_Loader_Filesystem(__DIR__ . '/../views');
-      $twig = new Twig_Environment($twigLoader);
+      $twig = $this->getDi()->get('twig');
       $template = $twig->loadTemplate('index.html.twig');
       echo $template->render(array('hello_world'=>'Hello world! Twig variable.'));
     }

@@ -1,11 +1,16 @@
 <?php
 
+// TODO: split logical from business part into
+// more readble parts
 use Phalcon\Loader;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Application;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
+
+error_reporting(-1);
+ini_set('display_errors', -1);
 
 // Register an autoloader
 $loader = new Loader();
@@ -26,9 +31,6 @@ $loader->register();
 // Create a DI
 $di = new FactoryDefault();
 
-// $twigLoader = new Twig_Loader_Filesystem('./templates');
-// $twig = new Twig_Environment($twigLoader);
-
 // Setup the view component
 $di->set(
     "view",
@@ -36,6 +38,15 @@ $di->set(
         $view = new View();
         $view->setViewsDir("../app/views/");
         return $view;
+    }
+);
+
+$di->set(
+    "twig",
+    function () {
+        $twigLoader = new Twig_Loader_Filesystem(__DIR__ . '/../app/views');
+        $twig = new Twig_Environment($twigLoader);
+        return $twig;
     }
 );
 

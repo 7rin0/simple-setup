@@ -1,0 +1,43 @@
+ab -n 100 -c 10 "http://phalcon-3.vm/"
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking phalcon-3.vm (be patient).....done
+
+
+Server Software:        Apache/2.4.7
+Server Hostname:        phalcon-3.vm
+Server Port:            80
+
+Document Path:          /
+Document Length:        4 bytes
+
+Concurrency Level:      10
+Time taken for tests:   8.358 seconds
+Complete requests:      100
+Failed requests:        0
+Total transferred:      16900 bytes
+HTML transferred:       400 bytes
+Requests per second:    11.96 [#/sec] (mean)
+Time per request:       835.781 [ms] (mean)
+Time per request:       83.578 [ms] (mean, across all concurrent requests)
+Transfer rate:          1.97 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       1
+Processing:   306  822 341.0    709    2049
+Waiting:      305  820 340.7    703    2049
+Total:        306  823 341.0    709    2050
+
+Percentage of the requests served within a certain time (ms)
+  50%    709
+  66%    883
+  75%   1034
+  80%   1205
+  90%   1310
+  95%   1411
+  98%   1752
+  99%   2050
+ 100%   2050 (longest request)
