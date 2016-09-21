@@ -1,7 +1,7 @@
 <?php
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
-
-require 'vendor/autoload.php';
+// http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/configuration.html
+require_once 'vendor/autoload.php';
 
 $doctrineSchema = [
   'meta' => [

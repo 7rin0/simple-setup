@@ -3,5 +3,14 @@
         "doctrine/orm": "^2.5",
         "twig/twig": "^1.24",
         "symfony/yaml": "^3.1"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^3.0",
+        "behat/behat": "^3.1",
+        "phpspec/phpspec": "^3.1",
+        "phpunit/phpunit": "^5.5",
+        "squizlabs/php_codesniffer": "^2.7",
+        "mockery/mockery": "^0.9.5",
+        "friendsofphp/php-cs-fixer": "^1.12"
     }
 }
