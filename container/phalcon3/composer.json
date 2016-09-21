@@ -11,6 +11,7 @@
         "phpunit/phpunit": "^5.5",
         "squizlabs/php_codesniffer": "^2.7",
         "mockery/mockery": "^0.9.5",
-        "friendsofphp/php-cs-fixer": "^1.12"
+        "friendsofphp/php-cs-fixer": "^1.12",
+        "raveren/kint": "^1.0"
     }
 }
