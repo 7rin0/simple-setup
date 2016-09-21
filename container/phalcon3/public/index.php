@@ -17,29 +17,34 @@ $loader->registerDirs(
     ]
 );
 
+// Add composer autoload
+$loader->registerFiles(['../vendor/autoload.php']);
+
+// Register all loader configs
 $loader->register();
 
 // Create a DI
 $di = new FactoryDefault();
+
+// $twigLoader = new Twig_Loader_Filesystem('./templates');
+// $twig = new Twig_Environment($twigLoader);
 
 // Setup the view component
 $di->set(
     "view",
     function () {
         $view = new View();
-
         $view->setViewsDir("../app/views/");
-
         return $view;
     }
 );
 
-// Setup a base URI so that all generated URIs include the "tutorial" folder
+# Set url
 $di->set(
     "url",
     function () {
         $url = new UrlProvider();
-        $url->setBaseUri("/tutorial/");
+        $url->setBaseUri("/");
         return $url;
     }
 );
