@@ -7,7 +7,7 @@ use Phalcon\Mvc\View;
 use Phalcon\Mvc\Application;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\Url as UrlProvider;
-use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
+use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;use Phalcon\Mvc\Dispatcher;
 
 error_reporting(-1);
 ini_set('display_errors', -1);
@@ -17,9 +17,20 @@ $loader = new Loader();
 
 $loader->registerDirs(
     [
-        "../app/controllers/",
-        "../app/models/",
+        "../app/Controller",
+        "../app/Model",
+        "../app/Entity",
+        "../app/View",
     ]
+);
+
+// Register Namespaces
+$loader->registerNamespaces(
+  [
+    "Simtup\\Controller" => "../app/Controller",
+    "Simtup\\Model" => "../app/Model",
+    "Simtup\\Entity" => "../app/Entity"
+  ]
 );
 
 // Add composer autoload
@@ -36,7 +47,7 @@ $di->set(
     "view",
     function () {
         $view = new View();
-        $view->setViewsDir("../app/views/");
+        $view->setViewsDir("../app/View/");
         return $view;
     }
 );
@@ -45,9 +56,23 @@ $di->set(
 $di->set(
     "twig",
     function () {
-        $twigLoader = new Twig_Loader_Filesystem(__DIR__ . '/../app/views');
+        $twigLoader = new Twig_Loader_Filesystem(__DIR__ . '/../app/View');
         $twig = new Twig_Environment($twigLoader);
         return $twig;
+    }
+);
+
+// Registering a dispatcher
+$di->set(
+    "dispatcher",
+    function () {
+        $dispatcher = new Dispatcher();
+
+        $dispatcher->setDefaultNamespace(
+            "Simtup\\Controller"
+        );
+
+        return $dispatcher;
     }
 );
 
@@ -60,7 +85,7 @@ $di->set(
           'doctrine' => [
             'meta' => [
                 'entity_path' => [
-                    'app/entities'
+                    'app/Entity'
                 ],
                 'auto_generate_proxies' => true,
                 'proxy_dir' =>  __DIR__.'/../cache/proxies',

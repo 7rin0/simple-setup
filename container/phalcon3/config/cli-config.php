@@ -6,7 +6,7 @@ require_once 'vendor/autoload.php';
 $doctrineSchema = [
   'meta' => [
       'entity_path' => [
-          '../app/entities'
+          'app/Entity'
       ],
       'auto_generate_proxies' => true,
       'proxy_dir' =>  __DIR__.'/../cache/proxies',

@@ -1,4 +1,5 @@
 <?php
+namespace Simtup\Controller;
 
 use Phalcon\Mvc\Controller;
 
@@ -24,6 +25,6 @@ class IndexController extends Controller
     {
       // https://github.com/raveren/kint
       // Simple test, to be removed soon ...
-      Kint::dump($GLOBALS, $_SERVER);
+      \Kint::dump($GLOBALS, $_SERVER);
     }
 }
