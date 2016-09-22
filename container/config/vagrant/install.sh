@@ -63,12 +63,13 @@ rm -rf elasticsearch-1.7.3.deb
 cd /usr/share/elasticsearch
 sudo bin/plugin install mobz/elasticsearch-head
 
-# Install SOLR
+# Install SOLR:8983
+# https://www.howtoforge.com/tutorial/how-to-install-and-configure-solr-on-ubuntu-1604/
 cd /tmp
 wget http://apache.crihan.fr/dist/lucene/solr/6.2.1/solr-6.2.1.tgz
 tar xzvf solr-6.2.1.tgz
 sudo bash solr-6.2.1/bin/install_solr_service.sh solr-6.2.1.tgz
-
+sudo service solr status
 
 # OPTIONAL
 # installs add-apt-repository
