@@ -63,6 +63,13 @@ rm -rf elasticsearch-1.7.3.deb
 cd /usr/share/elasticsearch
 sudo bin/plugin install mobz/elasticsearch-head
 
+# Install SOLR
+cd /tmp
+wget http://apache.crihan.fr/dist/lucene/solr/6.2.1/solr-6.2.1.tgz
+tar xzvf solr-6.2.1.tgz
+sudo bash solr-6.2.1/bin/install_solr_service.sh solr-6.2.1.tgz
+
+
 # OPTIONAL
 # installs add-apt-repository
 # http://hhvm.com/blog/3095/getting-wordpress-running-on-hhvm
@@ -97,3 +104,8 @@ sh /vagrant/config/vagrant/requirements.sh
 curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | sudo bash
 sudo apt-get install php7.0-phalcon
 php -m | grep 'phalcon'
+
+# Install Phalcon tools
+git clone git://github.com/phalcon/phalcon-devtools.git ~/phalcon-devtools
+sudo ln -s ~/phalcon-devtools/phalcon.php /usr/bin/phalcon
+chmod ugo+x /usr/bin/phalcon
