@@ -70,6 +70,8 @@ wget http://apache.crihan.fr/dist/lucene/solr/6.2.1/solr-6.2.1.tgz
 tar xzvf solr-6.2.1.tgz
 sudo bash solr-6.2.1/bin/install_solr_service.sh solr-6.2.1.tgz
 sudo service solr status
+# http://wiki.apache.org/solr/DataImportHandler
+sudo wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.39.tar.gz
 
 # OPTIONAL
 # installs add-apt-repository
