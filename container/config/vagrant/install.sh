@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Later this script will be split into parts, clusters and for some services a dedicated container is also being prepared and tested ...
+
 # Set global variables
 export DEBIAN_FRONTEND=noninteractive
 export COMPOSER_ALLOW_SUPERUSER=1
@@ -112,3 +114,15 @@ php -m | grep 'phalcon'
 git clone git://github.com/phalcon/phalcon-devtools.git ~/phalcon-devtools
 sudo ln -s ~/phalcon-devtools/phalcon.php /usr/bin/phalcon
 chmod ugo+x /usr/bin/phalcon
+
+# Install Gitlab
+# https://about.gitlab.com/downloads/#ubuntu1404
+#
+# http://serverfault.com/questions/143968/automate-the-installation-of-postfix-on-ubuntu
+# gitlab.vm
+debconf-set-selections <<< "postfix postfix/mailname string simple-setup.local"
+debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
+sudo apt-get install curl openssh-server ca-certificates postfix -y
+curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+sudo apt-get install gitlab-ce -y
+sudo gitlab-ctl reconfigure
