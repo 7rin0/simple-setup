@@ -120,9 +120,14 @@ chmod ugo+x /usr/bin/phalcon
 #
 # http://serverfault.com/questions/143968/automate-the-installation-of-postfix-on-ubuntu
 # gitlab.vm
+sudo gem install bundler
 debconf-set-selections <<< "postfix postfix/mailname string simple-setup.local"
 debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
 sudo apt-get install curl openssh-server ca-certificates postfix -y
 curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
 sudo apt-get install gitlab-ce -y
 sudo gitlab-ctl reconfigure
+
+# Prepare some BaaS applications to benchmark first.
+# http://loopback.io/
+sudo npm install -g strongloop
