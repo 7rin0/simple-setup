@@ -129,5 +129,5 @@ sudo apt-get install gitlab-ce -y
 sudo gitlab-ctl reconfigure
 
 # Prepare some BaaS applications to benchmark first.
-# http://loopback.io/
+# http://loopback.io/ ; https://strongloop.com/
 sudo npm install -g strongloop
