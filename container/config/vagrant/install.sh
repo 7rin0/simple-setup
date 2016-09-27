@@ -25,6 +25,9 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install -y build-essential
 
+# Install libmagick
+sudo apt-get install libmagickwand-dev imagemagick -y
+
 # Install Apache
 sudo apt-get install apache2 apache2-doc apache2-utils -y
 
@@ -51,9 +54,23 @@ sudo apt-get install nodejs -y
 # PHP dependencies manager
 sudo curl -sS https://getcomposer.org/installer | php && sudo mv composer.phar /usr/bin/composer
 sudo composer config -g github-oauth.github.com f0502ecd3d7c8e7e47223616c177b869180a3e05
-# Front dependencies manager
-sudo npm install -g bower
+
+# Install ruby >= 2.0
+# Required gems
+# https://rubygems.org/gems/json/versions/2.0.1
+sudo apt-add-repository ppa:brightbox/ruby-ng
+sudo apt-get install ruby-dev -y
+sudo gem install bundler
+sudo gem install json
 sudo gem install sass
+
+# Install globaly required npm packages.
+# http://loopback.io/ ; https://strongloop.com/
+# IBM API Connect https://developer.ibm.com/apiconnect/
+sudo npm install -g bower
+sudo npm install -g http-server
+sudo npm install -g strongloop
+sudo npm install -g apiconnect
 
 # Install Elasticsearch
 # FOSELastica doesnt support Elasticsearch > 2
@@ -117,19 +134,26 @@ chmod ugo+x /usr/bin/phalcon
 
 # Install Gitlab
 # https://about.gitlab.com/downloads/#ubuntu1404
-#
+# http://bundler.io/
 # http://serverfault.com/questions/143968/automate-the-installation-of-postfix-on-ubuntu
 # gitlab.vm
-sudo gem install bundler
 debconf-set-selections <<< "postfix postfix/mailname string simple-setup.local"
 debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
 sudo apt-get install curl openssh-server ca-certificates postfix -y
 curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
 sudo apt-get install gitlab-ce -y
 sudo gitlab-ctl reconfigure
+# alter unicorn port to 8081
 
-# Prepare some BaaS applications to benchmark first.
-# http://loopback.io/ ; https://strongloop.com/
-# IBM API Connect https://developer.ibm.com/apiconnect/
-sudo npm install -g strongloop
-sudo npm install -g apiconnect
+# Install Rake
+sudo apt-get install rake
+sudo bundle install
+
+# Add issue tracker
+# http://www.redmine.org/projects/redmine/wiki/redmineinstall
+cd ~
+git clone https://github.com/redmine/redmine
+cd redmine/public/themes
+git clone https://github.com/Nitrino/flatly_light_redmine.git
+mysql -u root -proot -e "create database redmine character set utf8; create user 'redmine'@'localhost' identified by 'root'; grant all privileges on redmine.* to 'redmine'@'localhost';"
+cp /vagrant/config/redmine/database.yml config/database.yml
