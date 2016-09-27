@@ -130,4 +130,6 @@ sudo gitlab-ctl reconfigure
 
 # Prepare some BaaS applications to benchmark first.
 # http://loopback.io/ ; https://strongloop.com/
+# IBM API Connect https://developer.ibm.com/apiconnect/
 sudo npm install -g strongloop
+sudo npm install -g apiconnect
