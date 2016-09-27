@@ -62,6 +62,7 @@ sudo apt-add-repository ppa:brightbox/ruby-ng
 sudo apt-get install ruby-dev -y
 sudo gem install bundler
 sudo gem install json
+sudo gem install mysql2
 sudo gem install sass
 
 # Install globaly required npm packages.
