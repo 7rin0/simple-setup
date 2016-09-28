@@ -152,6 +152,7 @@ sudo bundle install
 
 # Add issue tracker
 # http://www.redmine.org/projects/redmine/wiki/redmineinstall
+# bundle exec rails server webrick -b 192.168.55.55 -e production
 cd ~
 git clone https://github.com/redmine/redmine
 cd redmine/public/themes
