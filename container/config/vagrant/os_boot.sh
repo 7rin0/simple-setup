@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd /vagrant/loopback
-node .
+screen -d -m node .

@@ -54,4 +54,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # A script to init out machine's environment
   config.vm.provision :shell, path: 'config/vagrant/install.sh'
+
+  # Alternative: https://github.com/emyl/vagrant-triggers
+  config.vm.provision :shell, path: 'config/vagrant/os_boot.sh', run: 'always'
 end
