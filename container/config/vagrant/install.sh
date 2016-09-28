@@ -134,8 +134,9 @@ sudo ln -s ~/phalcon-devtools/phalcon.php /usr/bin/phalcon
 chmod ugo+x /usr/bin/phalcon
 
 # Install Gitlab
-# https://about.gitlab.com/downloads/#ubuntu1404
 # http://bundler.io/
+# https://about.gitlab.com/downloads/#ubuntu1404
+# http://gitlab.vm/help/ci/yaml/README.md#jobs
 # http://serverfault.com/questions/143968/automate-the-installation-of-postfix-on-ubuntu
 # gitlab.vm
 debconf-set-selections <<< "postfix postfix/mailname string simple-setup.local"
@@ -145,6 +146,11 @@ curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/scrip
 sudo apt-get install gitlab-ce -y
 sudo gitlab-ctl reconfigure
 # alter unicorn port to 8081
+# Add gitlab runner
+curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.deb.sh | sudo bash
+sudo apt-get install gitlab-ci-multi-runner -y
+# Run this command manually, token is expected
+# sudo gitlab-ci-multi-runner register
 
 # Install Rake
 sudo apt-get install rake
