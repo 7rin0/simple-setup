@@ -72,12 +72,14 @@ sudo gem install mysql2
 sudo gem install sass
 
 # Install globaly required npm packages.
-# http://loopback.io/ ; https://strongloop.com/
-# IBM API Connect https://developer.ibm.com/apiconnect/
 sudo npm install -g bower
 sudo npm install -g http-server
+# http://loopback.io/ && https://strongloop.com/
 sudo npm install -g strongloop
+# IBM API Connect https://developer.ibm.com/apiconnect/
 sudo npm install -g apiconnect
+# http://sailsjs.org/
+sudo npm install -g sails
 
 # Install Elasticsearch
 # FOSELastica doesnt support Elasticsearch > 2
