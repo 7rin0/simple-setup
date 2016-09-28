@@ -173,5 +173,5 @@ mysql -u root -proot -e "create database redmine character set utf8; create user
 cp /vagrant/config/redmine/database.yml config/database.yml
 
 # Add services manager on reboot
-chmod +x sh /vagrant/config/vagrant/os_boot.sh
+sudo chmod +x /vagrant/config/vagrant/os_boot.sh
 (crontab -l 2>/dev/null; echo "@reboot sh /vagrant/config/vagrant/os_boot.sh") | crontab -
