@@ -25,9 +25,15 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install -y build-essential
 
+# Install vagrant and virtualbox package for tests purposes
+sudo apt-get install virtualbox -y
+VAGRANT_FILENAME = 'vagrant_1.8.6_x86_64.deb'
+wget https://releases.hashicorp.com/vagrant/1.8.6/$VAGRANT_FILENAME
+sudo dpkg -i $VAGRANT_FILENAME
+sudo dpkg -i $VAGRANT_FILENAME
+
 # Install libmagick
 sudo apt-get install libmagickwand-dev imagemagick -y
-
 # Install Apache
 sudo apt-get install apache2 apache2-doc apache2-utils -y
 
@@ -165,3 +171,7 @@ cd redmine/public/themes
 git clone https://github.com/Nitrino/flatly_light_redmine.git
 mysql -u root -proot -e "create database redmine character set utf8; create user 'redmine'@'localhost' identified by 'root'; grant all privileges on redmine.* to 'redmine'@'localhost';"
 cp /vagrant/config/redmine/database.yml config/database.yml
+
+# Add services manager on reboot
+chmod +x sh /vagrant/config/vagrant/os_boot.sh
+(crontab -l 2>/dev/null; echo "@reboot sh /vagrant/config/vagrant/os_boot.sh") | crontab -
