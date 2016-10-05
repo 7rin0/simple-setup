@@ -9,10 +9,21 @@ export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Installation Scripts
+## OS (apt-get)
+## Services (servers, profilers)
+## RUBY (gems, bundler)
+## PHP (composer, php modules)
+## JAVA (modules, applications, services)
+## JS, CSS, NodeJS (frameworks and services)
+## Frameworks (frameworks and services)
+## Project Management (Gitlab, Redmine)
+
 # http://www.cyberciti.biz/faq/ubuntu-linux-14-04-install-php7-using-apt-get-command/
 # https://github.com/oerdnj/deb.sury.org/issues/56
 # Setup simple lamp environment.
 # Install PHP.
+set -gx  LC_ALL en_US.UTF-8
 sudo apt-get update && apt-get install -y language-pack-en-base && export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && apt-get install -y software-properties-common && add-apt-repository -y ppa:ondrej/php && add-apt-repository -y ppa:ondrej/mariadb-10.0 && apt-get update && apt-get -y upgrade -y
 sudo apt-get install php7.0 -y
 sudo apt-get install php7.0 php7.0-cli php7.0-fpm php7.0-gd php7.0-json php7.0-mysql php7.0-readline -y
@@ -101,6 +112,7 @@ sudo service solr status
 # http://wiki.apache.org/solr/DataImportHandler
 sudo wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.39.tar.gz
 
+
 # OPTIONAL
 # installs add-apt-repository
 # http://hhvm.com/blog/3095/getting-wordpress-running-on-hhvm
@@ -177,3 +189,9 @@ cp /vagrant/config/redmine/database.yml config/database.yml
 # Add services manager on reboot
 sudo chmod +x /vagrant/config/vagrant/os_boot.sh
 (crontab -l 2>/dev/null; echo "@reboot sh /vagrant/config/vagrant/os_boot.sh") | crontab -
+
+# Fish
+sudo apt-get install fish
+curl -L http://get.oh-my.fish | fish
+omf install bobthefish
+chsh -s /usr/bin/fish
