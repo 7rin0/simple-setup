@@ -195,3 +195,10 @@ sudo apt-get install fish
 curl -L http://get.oh-my.fish | fish
 omf install bobthefish
 chsh -s /usr/bin/fish
+
+# Server automation.
+# git://github.com/ansible/ansible.git
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible -y
+sudo apt-get update
+sudo apt-get install ansible
