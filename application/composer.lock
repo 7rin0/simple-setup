@@ -2053,16 +2053,16 @@
         },
         {
             "name": "react/http-client",
-            "version": "v0.4.11",
+            "version": "v0.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/http-client.git",
-                "reference": "4d367ff9909954bafe6a04762ec68e6b1e12bcf8"
+                "reference": "f2b902a0e5bc062ffb2ddd9032776bed9ed5d9f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/http-client/zipball/4d367ff9909954bafe6a04762ec68e6b1e12bcf8",
-                "reference": "4d367ff9909954bafe6a04762ec68e6b1e12bcf8",
+                "url": "https://api.github.com/repos/reactphp/http-client/zipball/f2b902a0e5bc062ffb2ddd9032776bed9ed5d9f0",
+                "reference": "f2b902a0e5bc062ffb2ddd9032776bed9ed5d9f0",
                 "shasum": ""
             },
             "require": {
@@ -2089,7 +2089,7 @@
             "keywords": [
                 "http"
             ],
-            "time": "2016-09-15 20:59:05"
+            "time": "2016-10-06 13:08:24"
         },
         {
             "name": "react/promise",
@@ -3180,16 +3180,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.26.0",
+            "version": "v1.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "81c2b5fd36581370c7731387f05dcdb577050513"
+                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/81c2b5fd36581370c7731387f05dcdb577050513",
-                "reference": "81c2b5fd36581370c7731387f05dcdb577050513",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
+                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
                 "shasum": ""
             },
             "require": {
@@ -3237,7 +3237,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-10-02 16:19:13"
+            "time": "2016-10-05 18:57:41"
         },
         {
             "name": "willdurand/faker-bundle",
@@ -4349,16 +4349,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.5.7",
+            "version": "5.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3f67cee782c9abfaee5e32fd2f57cdd54bc257ba"
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3f67cee782c9abfaee5e32fd2f57cdd54bc257ba",
-                "reference": "3f67cee782c9abfaee5e32fd2f57cdd54bc257ba",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/60c32c5b5e79c2248001efa2560f831da11cc2d7",
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7",
                 "shasum": ""
             },
             "require": {
@@ -4392,7 +4392,6 @@
                 "ext-pdo": "*"
             },
             "suggest": {
-                "ext-tidy": "*",
                 "ext-xdebug": "*",
                 "phpunit/php-invoker": "~1.1"
             },
@@ -4402,7 +4401,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.5.x-dev"
+                    "dev-master": "5.6.x-dev"
                 }
             },
             "autoload": {
@@ -4428,7 +4427,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-10-03 13:04:15"
+            "time": "2016-10-07 13:03:26"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
