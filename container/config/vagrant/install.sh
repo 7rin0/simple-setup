@@ -192,8 +192,8 @@ sudo chmod +x /vagrant/config/vagrant/os_boot.sh
 
 # Fish
 sudo apt-get install fish
-curl -L http://get.oh-my.fish | fish
-omf install bobthefish
+# curl -L http://get.oh-my.fish | fish
+# omf install bobthefish
 chsh -s /usr/bin/fish
 
 # Server automation.
