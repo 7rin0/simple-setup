@@ -91,6 +91,10 @@ sudo npm install -g strongloop
 sudo npm install -g apiconnect
 # http://sailsjs.org/
 sudo npm install -g sails
+# log
+sudo npm install -g log.io --user "vagrant"
+sudo screen -d -m log.io-server
+sudo screen -d -m log.io-harvester
 
 # Install Elasticsearch
 # FOSELastica doesnt support Elasticsearch > 2
