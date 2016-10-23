@@ -13,6 +13,11 @@
         "squizlabs/php_codesniffer": "^2.7",
         "mockery/mockery": "^0.9.5",
         "friendsofphp/php-cs-fixer": "^1.12",
-        "raveren/kint": "^1.0"
+        "raveren/kint": "^1.0",
+        "athletic/athletic": "^0.1.8",
+        "fzaninotto/faker": "^1.6",
+        "symfony/dom-crawler": "^3.1",
+        "symfony/css-selector": "^3.1",
+        "symfony/var-dumper": "^3.1"
     }
 }
