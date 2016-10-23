@@ -18,6 +18,12 @@
         "fzaninotto/faker": "^1.6",
         "symfony/dom-crawler": "^3.1",
         "symfony/css-selector": "^3.1",
-        "symfony/var-dumper": "^3.1"
+        "symfony/var-dumper": "^3.1",
+        "sebastian/phpcpd": "^2.0",
+        "pdepend/pdepend": "^2.2",
+        "phpmd/phpmd": "^2.4",
+        "behat/mink": "^1.7",
+        "behat/mink-goutte-driver": "^1.2",
+        "mikey179/vfsStream": "^1.6"
     }
 }
