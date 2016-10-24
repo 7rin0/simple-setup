@@ -38,14 +38,29 @@
         "react/react": "^0.4.2"
     },
     "require-dev": {
-        "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0",
         "behat/behat": "^3.1",
         "phpspec/phpspec": "^3.1",
         "phpunit/phpunit": "^5.5",
         "squizlabs/php_codesniffer": "^2.7",
         "mockery/mockery": "^0.9.5",
-        "friendsofphp/php-cs-fixer": "^1.12"
+        "friendsofphp/php-cs-fixer": "^1.12",
+        "raveren/kint": "^1.0",
+        "athletic/athletic": "^0.1.8",
+        "fzaninotto/faker": "^1.6",
+        "symfony/dom-crawler": "^3.1",
+        "symfony/css-selector": "^3.1",
+        "symfony/var-dumper": "^3.1",
+        "sebastian/phpcpd": "^2.0",
+        "pdepend/pdepend": "^2.2",
+        "phpmd/phpmd": "^2.4",
+        "behat/mink": "^1.7",
+        "behat/mink-goutte-driver": "^1.2",
+        "mikey179/vfsStream": "^1.6",
+        "sensio/generator-bundle": "^3.0",
+        "phake/phake": "^2.3",
+        "phpunit/php-file-iterator": "^1.4",
+        "phing/phing": "^2.15"
     },
     "scripts": {
         "symfony-scripts": [
