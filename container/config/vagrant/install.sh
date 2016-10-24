@@ -217,4 +217,4 @@ sudo service docker start
 
 # Add Jenkins container
 # https://hub.docker.com/_/jenkins/
-sudo docker run -p 8085:8085 -p 50000:50000 jenkins
+sudo docker run -p 8085:8080 -p 50000:50000 jenkins
