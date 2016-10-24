@@ -214,3 +214,7 @@ echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc
 sudo apt-get update
 sudo apt-get install docker-engine -y
 sudo service docker start
+
+# Add Jenkins container
+# https://hub.docker.com/_/jenkins/
+sudo docker run -p 8085:8085 -p 50000:50000 jenkins
