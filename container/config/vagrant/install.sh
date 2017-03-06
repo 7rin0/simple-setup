@@ -23,7 +23,6 @@ export LC_ALL=en_US.UTF-8
 # https://github.com/oerdnj/deb.sury.org/issues/56
 # Setup simple lamp environment.
 # Install PHP.
-set -gx  LC_ALL en_US.UTF-8
 sudo apt-get update && apt-get install -y language-pack-en-base && export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && apt-get install -y software-properties-common && add-apt-repository -y ppa:ondrej/php && add-apt-repository -y ppa:ondrej/mariadb-10.0 && apt-get update && apt-get -y upgrade -y
 sudo apt-get install php7.0 -y
 sudo apt-get install php7.0 php7.0-cli php7.0-fpm php7.0-gd php7.0-json php7.0-mysql php7.0-readline -y
